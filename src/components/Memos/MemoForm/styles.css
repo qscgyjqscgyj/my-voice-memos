@@ -1,0 +1,18 @@
+.memoFormBody {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.memoFormBody .description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.memoFormBody .description textarea {
+    height: 100px;
+}
+
+.memoFormBody .controls {
+    display: flex;
+    justify-content: space-between;
+}

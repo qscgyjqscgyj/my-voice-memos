@@ -1,0 +1,24 @@
+.memoBlock {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 10px 0;
+    border: #999 solid 0.1px;
+    padding: 10px;
+    box-shadow: 0 0 5px #999;
+}
+
+.memoBlock .timestamp {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+.memoBlock .description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.memoBlock .controls {
+    display: flex;
+    justify-content: space-between;
+}
