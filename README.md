@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# Starting the project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To start the project locally, you need to install the dependencies with the following command:
 
-## Available Scripts
+**Use Node for optimal work: 18**
 
-In the project directory, you can run:
+To install the dependencies, run:
 
-### `yarn start`
+`yarn`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To start the project, run:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`yarn start`
 
-### `yarn test`
+To run tests, run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn test`
 
-### `yarn build`
+You can also find a demo of the project at the following link: [https://qscgyjqscgyj.github.io/](https://qscgyjqscgyj.github.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Basic information about the project can be found in the following issue: [https://github.com/qscgyjqscgyj/my-voice-memos/issues/1](https://github.com/qscgyjqscgyj/my-voice-memos/issues/1)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Github actions file: https://github.com/qscgyjqscgyj/my-voice-memos/blob/master/.github/workflows/test.yml
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Project structure
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+-   `src/components` - All React components
+-   `src/components/App` - Main component that mounts to the DOM
+-   `src/components/Modal` - Modal component that uses React context to provide an interface for working with modal window. We can pass a component to the modal window, and it will be rendered in the body of the modal.
+-   `src/components/Memos` - Basic component that renders the `MemoList` component and `Add memo` button. Also, here is a `context.tsx` for working with memos state through a reducer.
+-   `src/components/MemoList` - Component that renders a list of memos. It also has deleting and editing memo handlers. The editing handler just opens the modal window to show the `MemoForm` component.
+-   `src/components/MemoForm` - Component that renders a form for creating and editing memos with voice or keyboard editing.
