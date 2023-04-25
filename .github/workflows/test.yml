@@ -1,0 +1,16 @@
+name: Tests
+on: push
+jobs:
+    Test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+            - name: Install deps
+              run: yarn
+            - name: Check types
+              run: yarn typecheck
+            - name: Run tests
+              run: yarn test
