@@ -1,3 +1,3 @@
 export interface MemoFormProps {
-    type: 'CREATE' | 'EDIT';
+    type: 'CREATE' | 'EDIT' | undefined;
 }

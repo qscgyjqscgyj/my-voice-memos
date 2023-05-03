@@ -8,7 +8,7 @@ interface ModalContextProps {
 }
 
 export const ModalContext = createContext<ModalContextProps>({
-    state: { isVisible: false, component: null },
+    state: { isVisible: false, component: undefined, type: undefined },
     dispatch: () => null,
 });
 

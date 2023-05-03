@@ -77,13 +77,13 @@ export function useMemoForm() {
             },
         });
 
-        dispatchModal({ isVisible: false, component: undefined });
+        dispatchModal({ isVisible: false, component: undefined, type: undefined });
     }, [dispatchMemos, description]);
 
     const handleSaveMemo = useCallback(() => {
         if (currentMemo) {
             dispatchMemos({ type: 'UPDATE_MEMO', payload: { ...currentMemo, description } });
-            dispatchModal({ isVisible: false, component: undefined });
+            dispatchModal({ isVisible: false, component: undefined, type: undefined });
         }
     }, [dispatchMemos, currentMemo, description]);
 

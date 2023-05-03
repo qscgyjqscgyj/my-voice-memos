@@ -26,7 +26,8 @@ describe('useMemoList', () => {
         jest.spyOn(ModalContextModule, 'useModalContext').mockReturnValue({
             state: {
                 isVisible: false,
-                component: null,
+                component: undefined,
+                type: undefined,
             },
             dispatch: mockModalDispatch,
         });
@@ -73,9 +74,9 @@ describe('useMemoList', () => {
         });
         expect(mockModalDispatch).toBeCalledWith({
             isVisible: true,
-            component: expect.any(Object),
+            component: MemoForm,
+            type: 'EDIT',
         });
-        expect(mockModalDispatch.mock.calls[0][0].component.type).toBe(MemoForm);
-        expect(mockModalDispatch.mock.calls[0][0].component.props.type).toBe('EDIT');
+        expect(mockModalDispatch.mock.calls[0][0].component).toBe(MemoForm);
     });
 });
