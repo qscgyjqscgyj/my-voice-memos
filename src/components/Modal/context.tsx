@@ -1,21 +1,23 @@
 import { createContext, useContext, useState } from 'react';
 
+import { MemoFormProps } from 'src/components/Memos/MemoForm/types';
+
 import { ModalContextProviderProps, ModalProps } from './types';
 
 interface ModalContextProps {
-    state: ModalProps | undefined;
-    dispatch: React.Dispatch<ModalProps>;
+    state: ModalProps<MemoFormProps> | undefined;
+    dispatch: React.Dispatch<ModalProps<MemoFormProps>>;
 }
 
 export const ModalContext = createContext<ModalContextProps>({
-    state: { isVisible: false, component: null },
+    state: { isVisible: false, component: undefined, componentProps: undefined },
     dispatch: () => null,
 });
 
 export function ModalContextProvider(props: ModalContextProviderProps) {
     const { children } = props;
 
-    const [modalState, setModalState] = useState<ModalProps | undefined>();
+    const [modalState, setModalState] = useState<ModalProps<MemoFormProps> | undefined>();
 
     return (
         <ModalContext.Provider value={{ state: modalState, dispatch: setModalState }}>

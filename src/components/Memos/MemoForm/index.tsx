@@ -1,10 +1,8 @@
-import { memo } from 'react';
-
 import { useMemoForm } from './hooks';
 import { MemoFormProps } from './types';
 import './styles.css';
 
-export const MemoForm = memo((props: MemoFormProps) => {
+export const MemoForm = (props: MemoFormProps) => {
     const { type } = props;
 
     const {
@@ -58,4 +56,4 @@ export const MemoForm = memo((props: MemoFormProps) => {
             </div>
         </div>
     );
-});
+};

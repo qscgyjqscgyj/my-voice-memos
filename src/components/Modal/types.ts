@@ -1,6 +1,7 @@
-export interface ModalProps {
+export interface ModalProps<T> {
     isVisible: boolean;
-    component: React.ReactNode;
+    component: ((props: T) => JSX.Element) | undefined;
+    componentProps: T | undefined;
 }
 
 export interface ModalContextProviderProps {

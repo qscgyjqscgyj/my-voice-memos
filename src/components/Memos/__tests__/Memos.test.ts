@@ -11,7 +11,8 @@ describe('useMemos', () => {
         jest.spyOn(ModalContextModule, 'useModalContext').mockReturnValue({
             state: {
                 isVisible: false,
-                component: null,
+                component: undefined,
+                componentProps: undefined,
             },
             dispatch: mockDispatch,
         });
@@ -25,9 +26,9 @@ describe('useMemos', () => {
 
         expect(mockDispatch).toBeCalledWith({
             isVisible: true,
-            component: expect.any(Object),
+            component: MemoForm,
+            componentProps: { type: 'CREATE' },
         });
-        expect(mockDispatch.mock.calls[0][0].component.type).toBe(MemoForm);
-        expect(mockDispatch.mock.calls[0][0].component.props.type).toBe('CREATE');
+        expect(mockDispatch.mock.calls[0][0].component).toBe(MemoForm);
     });
 });

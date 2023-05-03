@@ -10,7 +10,8 @@ export function useMemos() {
     const handleAddMemoModalOpen = useCallback(() => {
         dispatch({
             isVisible: true,
-            component: <MemoForm type="CREATE" />,
+            component: MemoForm,
+            componentProps: { type: 'CREATE' },
         });
     }, [dispatch]);
 
