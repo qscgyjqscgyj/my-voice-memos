@@ -11,7 +11,7 @@ export function useMemos() {
         dispatch({
             isVisible: true,
             component: MemoForm,
-            type: 'CREATE',
+            componentProps: { type: 'CREATE' },
         });
     }, [dispatch]);
 

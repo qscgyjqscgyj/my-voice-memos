@@ -27,7 +27,7 @@ describe('useMemoList', () => {
             state: {
                 isVisible: false,
                 component: undefined,
-                type: undefined,
+                componentProps: undefined,
             },
             dispatch: mockModalDispatch,
         });
@@ -75,7 +75,7 @@ describe('useMemoList', () => {
         expect(mockModalDispatch).toBeCalledWith({
             isVisible: true,
             component: MemoForm,
-            type: 'EDIT',
+            componentProps: { type: 'EDIT' },
         });
         expect(mockModalDispatch.mock.calls[0][0].component).toBe(MemoForm);
     });

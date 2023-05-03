@@ -1,9 +1,7 @@
-import { MemoFormProps } from 'src/components/Memos/MemoForm/types';
-
-export interface ModalProps {
+export interface ModalProps<T> {
     isVisible: boolean;
-    component: ((props: MemoFormProps) => JSX.Element) | undefined;
-    type: MemoFormProps['type'];
+    component: ((props: T) => JSX.Element) | undefined;
+    componentProps: T | undefined;
 }
 
 export interface ModalContextProviderProps {

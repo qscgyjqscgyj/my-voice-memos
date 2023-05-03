@@ -51,7 +51,7 @@ export function useMemoForm() {
                 recognition.abort();
             }
 
-            if (currentMemo) {
+            if (currentMemo !== undefined) {
                 dispatchMemos({
                     type: 'SET_CURRENT_MEMO',
                     payload: undefined,
@@ -77,13 +77,13 @@ export function useMemoForm() {
             },
         });
 
-        dispatchModal({ isVisible: false, component: undefined, type: undefined });
+        dispatchModal({ isVisible: false, component: undefined, componentProps: undefined });
     }, [dispatchMemos, description]);
 
     const handleSaveMemo = useCallback(() => {
         if (currentMemo) {
             dispatchMemos({ type: 'UPDATE_MEMO', payload: { ...currentMemo, description } });
-            dispatchModal({ isVisible: false, component: undefined, type: undefined });
+            dispatchModal({ isVisible: false, component: undefined, componentProps: undefined });
         }
     }, [dispatchMemos, currentMemo, description]);
 

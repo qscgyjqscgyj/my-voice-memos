@@ -24,7 +24,7 @@ export function useMemoList() {
         modalContext.dispatch({
             isVisible: true,
             component: MemoForm,
-            type: 'EDIT',
+            componentProps: { type: 'EDIT' },
         });
     };
 

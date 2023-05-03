@@ -12,7 +12,7 @@ describe('useMemos', () => {
             state: {
                 isVisible: false,
                 component: undefined,
-                type: undefined,
+                componentProps: undefined,
             },
             dispatch: mockDispatch,
         });
@@ -27,7 +27,7 @@ describe('useMemos', () => {
         expect(mockDispatch).toBeCalledWith({
             isVisible: true,
             component: MemoForm,
-            type: 'CREATE',
+            componentProps: { type: 'CREATE' },
         });
         expect(mockDispatch.mock.calls[0][0].component).toBe(MemoForm);
     });
